@@ -1,5 +1,117 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Collaboration Practice</title>
+</head>
 <body>
-<h1>hi git</h1>
+    <div class="container fade-in">
+        <h1>GitHub Collaboration Practice</h1>
+        <p>Welcome to our enhanced GitHub collaboration practice session! Each student should add their own section below with their name and a brief message. Feel free to experiment with the styles and animations!</p>
+        
+        <div class="student-section">
+            <h2>Sreeja</h2>
+            <p></p>
+        </div>
+        
+        <!-- More student sections will be added here -->
+
+        <div class="add-section">
+            <button class="add-button">Add Your Section</button>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.add-button').addEventListener('click', function() {
+            const newSection = document.createElement('div');
+            newSection.className = 'student-section fade-in';
+            newSection.innerHTML = `
+                <h2>New Student</h2>
+                <p>Replace this text with your own message!</p>
+            `;
+            document.querySelector('.container').insertBefore(newSection, this.parentNode);
+        });
+    </script>
+     <style>
+        @keyframes gradientBG {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        .container:hover {
+            transform: scale(1.02);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        .student-section {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            border-left: 5px solid #23a6d5;
+        }
+        .student-section:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+        }
+        .student-section h2 {
+            color: #23a6d5;
+            margin-top: 0;
+        }
+        .student-section p {
+            color: #555;
+        }
+        .add-section {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .add-button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #23a6d5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .add-button:hover {
+            background-color: #1b8ab2;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+    </style>
 </body>
 </html>
